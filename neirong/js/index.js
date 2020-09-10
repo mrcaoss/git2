@@ -18,7 +18,7 @@ $(function () {
         e.preventDefault()
         layui.layer.confirm('is not?', { icon: 3, title: '提示' }, function (index) {
             window.localStorage.removeItem('token')
-            window.location.href = '/index.html'
+            window.location.href = 'index.html'
             layer.close(index)
         })
     })

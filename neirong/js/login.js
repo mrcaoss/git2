@@ -79,14 +79,16 @@ $(function () {
         })
     })
 
-    $('#btn-login').submit(function (e) {
+    $('#btn-login').click(function (e) {
+        // console.log(111)
         e.preventDefault()
 
         var formdata = $(this).serialize();
         $.post('/api/login', formdata, function (res) {
+            console.log(res);
 
             if (res.status === 0) {
-                window.location.href = '/main.html'
+                window.location.href = 'main.html';
                 res.token.length !== 0 && window.localStorage.setItem('token', res.token)
             }
             layui.layer.msg(res.message)
